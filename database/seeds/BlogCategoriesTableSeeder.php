@@ -1,7 +1,8 @@
 <?php
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
-use \Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 
 class BlogCategoriesTableSeeder extends Seeder
 {
@@ -12,7 +13,7 @@ class BlogCategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        $categorise = [];
+        $categories = [];
 
         $cName = 'Без категории';
 
@@ -33,6 +34,6 @@ class BlogCategoriesTableSeeder extends Seeder
             ];
         }
 
-        \DB::table('blog_catigories')->insert($categorise);
+        DB::table('blog_categories')->insert($categories);
     }
 }
