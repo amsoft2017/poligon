@@ -28,3 +28,17 @@ Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//аДМИНКА Блога
+$groupData = [
+    'namespace' => 'Blog\Admin',
+    'prefix' => 'admin/blog',
+];
+
+Route::group($groupData, function (){
+    //BlogCategory
+    $methods = ['index','edit','store','update','create',];
+    Route::resource('categories', 'CategoryController')->only($methods)->names('blog.admin.categories');
+
+});
