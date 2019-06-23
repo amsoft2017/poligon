@@ -83,7 +83,8 @@ class CategoryController extends BaseController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int $id
+     * @param BlogCategoryRepository $categoryRepository
      * @return \Illuminate\Http\Response
      */
     public function edit($id, BlogCategoryRepository $categoryRepository)
