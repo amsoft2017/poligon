@@ -32,7 +32,7 @@ class CategoryController extends BaseController
     {
 //        $paginator = BlogCategory::paginate(5);
 
-        $paginator = $this->blogCategoryRepository->getAllWithPaginate(5);
+        $paginator = $this->blogCategoryRepository->getAllWithPaginate(15);
 
         return view('blog.admin.categories.index', compact('paginator'));
     }
@@ -102,9 +102,6 @@ class CategoryController extends BaseController
      */
     public function edit($id)
     {
-//        $item = BlogCategory::findOrFail($id);
-//        $categoryList = BlogCategory::all();
-
         $item = $this->blogCategoryRepository->getEdit($id);
         $categoryList = $this->blogCategoryRepository->getForComboBox();
 
